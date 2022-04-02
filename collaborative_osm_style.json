@@ -447,6 +447,7 @@
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "transportation_name",
+      "minzoom": 10,
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name}",
@@ -737,13 +738,13 @@
       }
     },
     {
-      "id": "city label - 1",
+      "id": "city label - 1-2",
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "place",
-      "minzoom": 5,
-      "maxzoom": 18,
-      "filter": ["all", ["==", "class", "city"], ["==", "rank", 1]],
+      "minzoom": 4,
+      "maxzoom": 11,
+      "filter": ["all", ["==", "class", "city"], ["<=", "rank", 2]],
       "layout": {
         "text-field": "{name}",
         "text-size": 12,
@@ -756,13 +757,18 @@
       }
     },
     {
-      "id": "city label - 7",
+      "id": "city label - 3-6",
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "place",
       "minzoom": 6,
-      "maxzoom": 18,
-      "filter": ["all", ["==", "class", "city"], ["==", "rank", 7]],
+      "maxzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "city"],
+        ["<=", "rank", 6],
+        [">", "rank", 2]
+      ],
       "layout": {
         "text-field": "{name}",
         "text-size": 14,
@@ -775,13 +781,18 @@
       }
     },
     {
-      "id": "city label - 8",
+      "id": "city label - 7-8",
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "place",
-      "minzoom": 6,
-      "maxzoom": 18,
-      "filter": ["all", ["==", "class", "city"], ["==", "rank", 8]],
+      "minzoom": 7,
+      "maxzoom": 12,
+      "filter": [
+        "all",
+        ["==", "class", "city"],
+        ["<=", "rank", 8],
+        [">", "rank", 6]
+      ],
       "layout": {
         "text-field": "{name}",
         "text-size": 14,
@@ -794,13 +805,18 @@
       }
     },
     {
-      "id": "city label - 9",
+      "id": "city label - 9-10",
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "place",
-      "minzoom": 5,
-      "maxzoom": 18,
-      "filter": ["all", ["==", "class", "city"], ["==", "rank", 9]],
+      "minzoom": 8,
+      "maxzoom": 14,
+      "filter": [
+        "all",
+        ["==", "class", "city"],
+        ["<=", "rank", 10],
+        [">", "rank", 8]
+      ],
       "layout": {
         "text-field": "{name}",
         "text-size": 14,
@@ -813,13 +829,80 @@
       }
     },
     {
-      "id": "city label - 10",
+      "id": "city label - 11+",
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "place",
-      "minzoom": 5,
-      "maxzoom": 18,
-      "filter": ["all", ["==", "class", "city"], ["==", "rank", 10]],
+      "minzoom": 10,
+      "maxzoom": 15,
+      "filter": ["all", ["==", "class", "city"], [">", "rank", 10]],
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 14,
+        "text-font": ["Roboto Regular"]
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "town label",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 9,
+      "maxzoom": 14,
+      "filter": ["all", ["==", "class", "town"]],
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 14,
+        "text-font": ["Roboto Regular"]
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "minor settlement label",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 11,
+      "maxzoom": 15,
+      "filter": [
+        "any",
+        ["==", "class", "village"],
+        ["==", "name", "hamlet"],
+        ["==", "name", "suburb"]
+      ],
+      "layout": {
+        "text-field": "{name}",
+        "text-size": 14,
+        "text-font": ["Roboto Regular"]
+      },
+      "paint": {
+        "text-halo-color": "rgba(255, 255, 255, 1)",
+        "text-halo-width": 1,
+        "text-halo-blur": 1
+      }
+    },
+    {
+      "id": "really minor settlement label",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "minzoom": 13,
+      "maxzoom": 17,
+      "filter": [
+        "any",
+        ["==", "class", "quarter"],
+        ["==", "name", "neighborhood"],
+        ["==", "name", "isolated_dwelling"]
+      ],
       "layout": {
         "text-field": "{name}",
         "text-size": 14,
