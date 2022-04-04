@@ -300,6 +300,34 @@
       }
     },
     {
+      "id": "casing - motorway",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 7,
+      "filter": ["all", ["==", "class", "motorway"], ["!=", "ramp", 1]],
+      "layout": {"line-join": "miter", "line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(146, 39, 39, 1)",
+        "line-width": {"stops": [[7, 1], [9, 4], [16, 13], [20, 27]]},
+        "line-blur": 1
+      }
+    },
+    {
+      "id": "casing - motorway ramp",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": ["all", ["==", "class", "motorway"], ["==", "ramp", 1]],
+      "layout": {"line-join": "bevel", "line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(146, 39, 39, 1)",
+        "line-width": {"stops": [[10, 2], [16, 10], [20, 27]]},
+        "line-blur": 1
+      }
+    },
+    {
       "id": "road - service",
       "type": "line",
       "source": "openmaptiles",
@@ -386,6 +414,25 @@
       }
     },
     {
+      "id": "road - trunk",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 6,
+      "filter": [
+        "all",
+        ["==", "class", "trunk"],
+        ["!=", "ramp", 1],
+        ["!=", "brunnel", "bridge"]
+      ],
+      "layout": {"line-join": "miter", "line-cap": "round"},
+      "paint": {
+        "line-color": "#f9b29c",
+        "line-width": {"stops": [[5, 1], [9, 3], [16, 10], [20, 25]]},
+        "line-blur": 0
+      }
+    },
+    {
       "id": "road - trunk ramp",
       "type": "line",
       "source": "openmaptiles",
@@ -405,21 +452,40 @@
       }
     },
     {
-      "id": "road - trunk",
+      "id": "road - motorway",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 5,
       "filter": [
         "all",
-        ["==", "class", "trunk"],
+        ["==", "class", "motorway"],
         ["!=", "ramp", 1],
         ["!=", "brunnel", "bridge"]
       ],
       "layout": {"line-join": "miter", "line-cap": "round"},
       "paint": {
-        "line-color": "#f9b29c",
+        "line-color": "rgba(244, 122, 122, 1)",
         "line-width": {"stops": [[5, 1], [9, 3], [16, 10], [20, 25]]},
+        "line-blur": 0
+      }
+    },
+    {
+      "id": "road - motorway ramp",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["!=", "brunnel", "bridge"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "miter", "line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(244, 122, 122, 1)",
+        "line-width": {"stops": [[10, 1], [16, 7], [20, 25]]},
         "line-blur": 0
       }
     },
@@ -526,7 +592,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 8,
+      "minzoom": 13,
       "filter": ["all", ["==", "class", "minor"], ["==", "brunnel", "bridge"]],
       "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
@@ -554,7 +620,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 8,
+      "minzoom": 13,
       "filter": [
         "all",
         ["==", "class", "tertiary"],
@@ -636,6 +702,82 @@
       }
     },
     {
+      "id": "bridge - motorway casing",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 11,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["!has", "ramp"]
+      ],
+      "layout": {"line-join": "miter", "line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": {"stops": [[10, 4], [12, 5], [16, 12], [20, 26]]},
+        "line-blur": 0
+      }
+    },
+    {
+      "id": "bridge - motorway",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 8,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["!has", "ramp"],
+        ["==", "brunnel", "bridge"]
+      ],
+      "layout": {"line-join": "miter", "line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(244, 122, 122, 1)",
+        "line-width": {"stops": [[9, 3], [16, 10], [20, 25]]},
+        "line-blur": 0
+      }
+    },
+    {
+      "id": "bridge - motorway ramp casing",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["has", "ramp"]
+      ],
+      "layout": {"line-join": "miter", "line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(0, 0, 0, 1)",
+        "line-width": {"stops": [[10, 2], [16, 8], [20, 26]]},
+        "line-blur": 0
+      }
+    },
+    {
+      "id": "bridge - motorway ramp",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        ["==", "class", "motorway"],
+        ["==", "brunnel", "bridge"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "miter", "line-cap": "round"},
+      "paint": {
+        "line-color": "rgba(244, 122, 122, 1)",
+        "line-width": {"stops": [[10, 1], [16, 7], [20, 25]]},
+        "line-blur": 0
+      }
+    },
+    {
       "id": "bridge - trunk road",
       "type": "line",
       "source": "openmaptiles",
@@ -659,7 +801,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 12,
+      "minzoom": 14,
       "filter": ["all", ["==", "class", "path"], ["==", "brunnel", "bridge"]],
       "paint": {"line-color": "rgba(0, 0, 0, 1)", "line-width": 5}
     },
@@ -913,6 +1055,29 @@
         "text-halo-width": 1,
         "text-halo-blur": 1
       }
+    },
+    {
+      "id": "borders - subnational",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "minzoom": 4.5,
+      "filter": [
+        "all",
+        [">=", ["get", "admin_level"], 3],
+        ["<=", ["get", "admin_level"], 4],
+        ["==", ["get", "maritime"], 0]
+      ],
+      "paint": {"line-color": "rgba(150, 150, 150, 1)", "line-width": 1}
+    },
+    {
+      "id": "borders - national",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "boundary",
+      "minzoom": 2,
+      "filter": ["all", ["==", "admin_level", 2], ["==", "maritime", 0]],
+      "paint": {"line-color": "rgba(150, 150, 150, 1)", "line-width": 1.5}
     }
   ],
   "id": "u10hdq2ou"
