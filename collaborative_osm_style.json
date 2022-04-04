@@ -562,7 +562,7 @@
         ["==", "class", "service"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"stops": [[13, 2], [16, 4], [20, 15]]},
@@ -580,7 +580,7 @@
         ["==", "class", "service"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
         "line-width": {"stops": [[13, 1], [16, 4], [20, 14]]},
@@ -608,7 +608,7 @@
       "source-layer": "transportation",
       "minzoom": 8,
       "filter": ["all", ["==", "class", "minor"], ["==", "brunnel", "bridge"]],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(255, 255, 255, 1)",
         "line-width": {"stops": [[12, 2], [16, 8], [20, 23]]},
@@ -626,7 +626,7 @@
         ["==", "class", "tertiary"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"stops": [[10, 4], [12, 5], [16, 12], [20, 26]]},
@@ -644,7 +644,7 @@
         ["==", "class", "tertiary"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "#ffffff",
         "line-width": {"stops": [[10, 3], [12, 4], [16, 11], [20, 25]]},
@@ -662,7 +662,7 @@
         ["==", "class", "secondary"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "#f7fabf",
         "line-width": {"stops": [[9, 3], [16, 11], [20, 25]]},
@@ -676,7 +676,7 @@
       "source-layer": "transportation",
       "minzoom": 8,
       "filter": ["all", ["==", "class", "trunk"], ["==", "brunnel", "bridge"]],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "#f9b29c",
         "line-width": {"stops": [[9, 3], [16, 7], [20, 25]]},
@@ -694,7 +694,7 @@
         ["==", "class", "primary"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "#fcd6a4",
         "line-width": {"stops": [[9, 3], [16, 10], [20, 25]]},
@@ -713,7 +713,7 @@
         ["==", "brunnel", "bridge"],
         ["!has", "ramp"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"stops": [[10, 4], [12, 5], [16, 12], [20, 26]]},
@@ -732,7 +732,7 @@
         ["!has", "ramp"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(244, 122, 122, 1)",
         "line-width": {"stops": [[9, 3], [16, 10], [20, 25]]},
@@ -751,7 +751,7 @@
         ["==", "brunnel", "bridge"],
         ["has", "ramp"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(0, 0, 0, 1)",
         "line-width": {"stops": [[10, 2], [16, 8], [20, 26]]},
@@ -770,7 +770,7 @@
         ["==", "brunnel", "bridge"],
         ["==", "ramp", 1]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "rgba(244, 122, 122, 1)",
         "line-width": {"stops": [[10, 1], [16, 7], [20, 25]]},
@@ -789,7 +789,7 @@
         ["!has", "ramp"],
         ["==", "brunnel", "bridge"]
       ],
-      "layout": {"line-join": "miter", "line-cap": "round"},
+      "layout": {"line-join": "miter", "line-cap": "butt"},
       "paint": {
         "line-color": "#f9b29c",
         "line-width": {"stops": [[9, 3], [16, 10], [20, 25]]},
