@@ -1158,6 +1158,18 @@
       }
     },
     {
+      "id": "bollard",
+      "type": "circle",
+      "source": "openmaptiles",
+      "source-layer": "poi",
+      "minzoom": 15,
+      "filter": ["all", ["==", "class", "bollard"]],
+      "paint": {
+        "circle-color": "#7d7c7c",
+        "circle-radius": {"stops": [[16, 2], [17, 3]]}
+      }
+    },
+    {
       "id": "borders - subnational",
       "type": "line",
       "source": "openmaptiles",
