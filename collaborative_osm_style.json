@@ -225,30 +225,6 @@
       }
     },
     {
-      "id": "casing - pedestrian area",
-      "type": "line",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 13,
-      "filter": [
-        "all",
-        ["==", "subclass", "pedestrian"],
-        ["==", "$type", "Polygon"]
-      ],
-      "layout": {
-        "visibility": "visible",
-        "line-cap": "butt",
-        "line-join": "miter"
-      },
-      "paint": {
-        "line-color": "rgba(169, 169, 169, 1)",
-        "line-width": {"stops": [[15, 3], [16, 5], [17, 4], [18, 6]]},
-        "line-blur": 1,
-        "line-translate-anchor": "map",
-        "line-offset": 0
-      }
-    },
-    {
       "id": "casing - service",
       "type": "line",
       "source": "openmaptiles",
@@ -424,7 +400,11 @@
         ["==", "subclass", "pedestrian"],
         ["==", "$type", "Polygon"]
       ],
-      "paint": {"fill-color": "rgba(221, 221, 232, 1)"}
+      "paint": {
+        "fill-color": "rgba(221, 221, 232, 1)",
+        "fill-outline-color": "rgba(169, 169, 169, 1)",
+        "fill-antialias": true
+      }
     },
     {
       "id": "road - pedestrian",
