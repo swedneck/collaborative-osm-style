@@ -1191,6 +1191,53 @@
       "minzoom": 2,
       "filter": ["all", ["==", "admin_level", 2], ["==", "maritime", 0]],
       "paint": {"line-color": "rgba(150, 150, 150, 1)", "line-width": 1.5}
+    },
+    {
+      "id": "platform area",
+      "type": "fill",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": ["all", ["==", "subclass", "platform"]],
+      "paint": {
+        "fill-color": "#bbbbbb",
+        "fill-outline-color": "#7e7e7e",
+        "fill-antialias": true
+      }
+    },
+    {
+      "id": "platform line casing",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "platform"],
+        ["==", "$type", "LineString"]
+      ],
+      "layout": {"line-cap": "round"},
+      "paint": {
+        "line-color": "#7e7e7e",
+        "line-width": {"stops": [[15, 4], [16, 5], [17, 7]]}
+      }
+    },
+    {
+      "id": "platform line",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 14,
+      "filter": [
+        "all",
+        ["==", "subclass", "platform"],
+        ["==", "$type", "LineString"]
+      ],
+      "layout": {"line-cap": "round"},
+      "paint": {
+        "line-color": "#bbbbbb",
+        "line-width": {"stops": [[15, 2], [16, 3], [17, 5]]}
+      }
     }
   ],
   "id": "u10hdq2ou"
